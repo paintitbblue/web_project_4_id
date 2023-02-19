@@ -1,0 +1,18 @@
+.form {
+    width: 430px;
+    height: 330px;
+    display: block;
+    background-color: white;
+    margin: 195px auto 50px 425px;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 320px) {
+    .form {
+        width: 282px;
+        height: 322px;
+        display: block;
+        background-color: white;
+        margin: 123px 19px 123px;
+    }
+}

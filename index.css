@@ -1,0 +1,55 @@
+@import url(./blocks/page/page.css);
+@import url(./blocks/header/header.css);
+@import url(./blocks/header/__logo/header__logo.css);
+@import url(./blocks/header/__line/header__line.css);
+@import url(./blocks/profile/profile.css);
+@import url(./blocks/profile/__avatar/profile__avatar.css);
+@import url(./blocks/profile/__avatar/profile__avatar_ellipse.css);
+@import url(./blocks/profile/__info/profile__info.css);
+@import url(./blocks/profile/__info/profile__info_name.css);
+@import url(./blocks/profile/__info/profile__info_bio.css);
+@import url(./blocks/profile/__btn/profile__edit-btn.css);
+@import url(./blocks/profile/__btn/profile__add-btn.css);
+@import url(./blocks/profile/__btn/profile__add-btn-rect.css);
+@import url(./blocks/elements/elements.css);
+@import url(./blocks/element/element.css);
+@import url(./blocks/elements/element/__image/element__image.css);
+@import url(./blocks/elements/element/__rectangle/element__rectangle.css);
+@import url(./blocks/elements/element/__heart/element__heart.css);
+@import url(./blocks/elements/element/__text/element__text.css);
+@import url(./blocks/form/form.css);
+@import url(./blocks/form/__popup/form__popup.css);
+@import url(./blocks/form/__toggle/form__toggle.css);
+@import url(./blocks/form/__heading/form__heading.css);
+@import url(./blocks/form/__name/form__name.css);
+@import url(./blocks/form/__bio/form__bio.css);
+@import url(./blocks/form/__btn/form__btn.css);
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/footer/__text/footer__text.css);
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/font/Inter-Regular.woff2) format("woff2"),
+        url(/font/Inter-Regular.woff) format("woff");
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(/font/Inter-SemiBold.woff2) format("woff2"),
+        url(/font/Inter-SemiBold.woff) format("woff");
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url(/font/Inter-Black.woff2) format("woff2"),
+        url(/font/Inter-Black.woff) format("woff");
+}  

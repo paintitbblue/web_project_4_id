@@ -1,0 +1,20 @@
+.form__toggle {
+    position: fixed;
+    height: 40px;
+    left: 72%;
+    top: 160px;
+    cursor: pointer;
+    transition: opacity .4s;
+}
+
+.form__toggle:hover {
+    opacity: .7;
+}
+
+@media screen and (max-width: 320px) {
+    .form__toggle {
+        height: 20px;
+        top: 75px;
+        left: 78.5%;
+    }
+}

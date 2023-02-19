@@ -1,0 +1,17 @@
+.form__bio {
+    display: block;
+    width: 358px;
+    height: 27px;
+    border: 0;
+    margin: 0 36px 48px;
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+}
+
+@media screen and (max-width: 320px) {
+    .form__bio {
+        width: 238px;
+        line-height: 17px;
+        margin: 0 22px 30px;
+    }
+}
