@@ -1,7 +1,8 @@
 .form__toggle {
     position: fixed;
     height: 40px;
-    left: 72%;
+    left: 60%;
+    right: auto;
     top: 160px;
     cursor: pointer;
     transition: opacity .4s;
