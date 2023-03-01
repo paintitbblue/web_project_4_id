@@ -6,5 +6,15 @@
     line-height: 29px;
     color: #000;
     z-index: 1;
-    margin: 307px 15px 31px 21px;
+    bottom: 2px;
+    left: 18px;
+}
+
+@media screen and (max-width: 320px) {
+    .element__text {
+        width: 246px;
+        height: 23px;
+        left: 15px;
+        bottom: 7px;
+    }
 }

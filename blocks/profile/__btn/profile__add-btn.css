@@ -1,8 +1,9 @@
 .profile__add-btn {
     height: 22px;
     position: absolute;
-    top: 204px;
-    margin: 0 66px;
+    top: 14px;
+    right: 60px;
+    background-color: transparent;
 }
 
 .profile__add-btn:hover {
@@ -12,7 +13,8 @@
 @media screen and (max-width: 320px) {
     .profile__add-btn {
         height: 16px;
-        top: 421px;
-        left: 88px;
+        top: 14px;
+        left: 135px;
+        background-color: transparent;
     }
 }

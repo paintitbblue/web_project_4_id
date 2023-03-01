@@ -1,30 +1,29 @@
-let popupButton = document.querySelector(".profile__edit-btn")
- 
-popupButton.addEventListener("click", function() {
-  document.querySelector(".form__popup").classList.toggle("form__popup_active")
-})
+const popupButton = document.querySelector(".profile__edit-btn");
+const closeButton = document.querySelector(".form_close-toggle");
+const popupForm = document.querySelector(".form__popup");
+const formSubmit = document.querySelector(".form");
+const profileName = document.querySelector(".profile__info_name");
+const profileJob = document.querySelector(".profile__info_bio");
 
-let closeButton = document.querySelector(".form_close-toggle")
+popupButton.addEventListener("click", openForm);
 
-closeButton.addEventListener("click", function() {
-  document.querySelector(".form__popup").classList.toggle("form__popup_active")
-})
+closeButton.addEventListener("click", closeForm);
 
-let popUpForm = document.querySelector(".form");
-let profile__name = document.querySelector(".profile__info_name");
-let profile__job = document.querySelector(".profile__info_bio");
-
-
-popUpForm.addEventListener("submit", function (evt) {
-  console.log("========")
-  handleProfileFormSubmit(evt);
-  document.querySelector(".form__popup").classList.toggle("form__popup_active")
-});
+formSubmit.addEventListener("submit", handleProfileFormSubmit);
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
-  let inputName = popUpForm.querySelector(".form__name");
-  let inputJob = popUpForm.querySelector(".form__bio");
-  profile__name.textContent = inputName.value;
-  profile__job.textContent = inputJob.value;
+  document.querySelector(".form__popup").classList.toggle("form__popup_active")
+  let inputName = formSubmit.querySelector(".form__name");
+  let inputJob = formSubmit.querySelector(".form__bio");
+  profileName.textContent = inputName.value;
+  profileJob.textContent = inputJob.value;
+}
+
+function openForm() {
+  popupForm.classList.toggle("form__popup_active")
+}
+
+function closeForm() {
+  closeButton.classList.toggle("form__popup_active")
 }

@@ -6,6 +6,7 @@
     bottom: 100%;
     cursor: pointer;
     transition: opacity .4s;
+    background-color: transparent;
 }
 
 .form__toggle:hover {
@@ -14,8 +15,10 @@
 
 @media screen and (max-width: 320px) {
     .form__toggle {
+        position: absolute;
+        width: 20px;
         height: 20px;
-        top: 75px;
-        left: 78.5%;
+        bottom: 110%;
+        left: 83%;
     }
 }
