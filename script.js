@@ -25,5 +25,5 @@ function openForm() {
 }
 
 function closeForm() {
-  closeButton.classList.toggle("form__popup_active")
+  closeButton.classList.toggle("form_close-toggle")
 }
