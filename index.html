@@ -22,12 +22,12 @@
         <div class="profile__info">
             <p class="profile__info_name">Jacques Cousteau</p>
             <button class="profile__edit-btn">
-                <img src="./images/Edit Button.png" alt="edit button icon">
+                <img class="profile__edit-btn__icon" src="./images/Edit Button.png" alt="edit button icon">
             </button>
             <p class="profile__info_bio">Explorer</p>
         </div>
         
-        <button href="#" class="profile__add-btn-rect">
+        <button class="profile__add-btn-rect">
                 <img src="./images/add btn.png"  class="profile__add-btn" alt="add button icon"> 
         </button>
     </section>
@@ -59,7 +59,7 @@
         </div>
         <div class="element">
             <img src="./images/vanoise nationa....png" class="element__image" alt="Image of Vanoise Park">
-            <p class="element__text element__text-overflow">Vanoise National Park</p>
+            <p class="element__text">Vanoise National Park</p>
             <img src="./images/heart.svg" class="element__heart" alt="heart icon">
             
         </div>
@@ -73,13 +73,13 @@
     <section class="form__popup">
         
         <form class="form">
-            <button class="form__toggle">
-                <img class="form_close-toggle" src="./images/Close Icon.png"> 
+            <button type="button" class="form__close-btn">
+                <img class="form__close-btn__icon" src="./images/Close Icon.png"> 
             </button>
             <h2 class="form__heading">Edit profile</h2>
-            <input type="text" class="form__name" placeholder="Jacques Cousteau">
-            <input type="text" class="form__bio" placeholder="Explorer">
-            <button type="submit" class="form__btn">Save</button>
+            <input type="text" class="form__name" placeholder="Name">
+            <input type="text" class="form__bio" placeholder="About Me">
+            <button type="submit" class="form__save-btn">Save</button>
         </form>
       </section>
 

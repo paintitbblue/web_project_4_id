@@ -15,14 +15,13 @@
 @import url(./blocks/elements/element/__image/element__image.css);
 @import url(./blocks/elements/element/__heart/element__heart.css);
 @import url(./blocks/elements/element/__text/element__text.css);
-@import url(./blocks/elements/element/__text/element__text-overflow.css);
 @import url(./blocks/form/form.css);
 @import url(./blocks/form/__popup/form__popup.css);
-@import url(./blocks/form/__toggle/form__toggle.css);
+@import url(./blocks/form/__close-btn/form__close-btn.css);
 @import url(./blocks/form/__heading/form__heading.css);
 @import url(./blocks/form/__name/form__name.css);
 @import url(./blocks/form/__bio/form__bio.css);
-@import url(./blocks/form/__btn/form__btn.css);
+@import url(./blocks/form/__save-btn/form__save-btn.css);
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/footer/__text/footer__text.css);
 
@@ -31,8 +30,8 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url(/font/Inter-Regular.woff2) format("woff2"),
-        url(/font/Inter-Regular.woff) format("woff");
+    src: url(./font/Inter-Regular.woff2) format("woff2"),
+        url(./font/Inter-Regular.woff) format("woff");
 }
 
 @font-face {
@@ -40,8 +39,8 @@
     font-style: normal;
     font-weight: 600;
     font-display: swap;
-    src: url(/font/Inter-SemiBold.woff2) format("woff2"),
-        url(/font/Inter-SemiBold.woff) format("woff");
+    src: url(./font/Inter-SemiBold.woff2) format("woff2"),
+        url(./font/Inter-SemiBold.woff) format("woff");
 }
 
 @font-face {
@@ -49,6 +48,6 @@
     font-style: normal;
     font-weight: 900;
     font-display: swap;
-    src: url(/font/Inter-Black.woff2) format("woff2"),
-        url(/font/Inter-Black.woff) format("woff");
+    src: url(./font/Inter-Black.woff2) format("woff2"),
+        url(./font/Inter-Black.woff) format("woff");
 }  

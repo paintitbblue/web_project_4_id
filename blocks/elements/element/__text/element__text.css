@@ -8,13 +8,17 @@
     z-index: 1;
     bottom: 2px;
     left: 18px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 235px;
 }
 
 @media screen and (max-width: 320px) {
     .element__text {
-        width: 246px;
-        height: 23px;
+        width: 240px;
+        height: 29px;
         left: 15px;
-        bottom: 7px;
+        bottom: 2px;
     }
 }

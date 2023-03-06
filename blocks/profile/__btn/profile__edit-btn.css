@@ -3,6 +3,7 @@
     height: 24px;
     margin: 15px 0 18px;
     background-color: transparent;
+    border: none;
 }
 
 .profile__edit-btn:hover {
@@ -10,8 +11,10 @@
     cursor: pointer;
 }
 
+
+
 @media screen and (max-width: 320px) {
-    .profile__edit-btn {
+    .profile__edit-btn__icon {
         width: 15px;
         height: 15px;
     }
