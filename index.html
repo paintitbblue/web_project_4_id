@@ -34,44 +34,44 @@
 
     <section class="elements">
         <div class="element">
-            <img src="./images/yosemite-valley.png" class="element__image" alt="Image of Yosemite Valley">
+            <img src="./images/yosemite.jpg" class="element__image" alt="Image of Yosemite Valley">
             <p class="element__text">Yosemite Valley</p>
             <img src="./images/heart.svg" class="element__heart" alt="heart icon">
-            
+            <img src="./images/Trash.png" class="element__delete" alt="trash icon">
         </div>
         <div class="element">
-            <img src="./images/lake-louise.png" class="element__image" alt="Image of Lake Louise">
+            <img src="./images/lake-louise.jpg" class="element__image" alt="Image of Lake Louise">
             <p class="element__text">Lake Louise</p>
             <img src="./images/heart.svg" class="element__heart" alt="heart icon">
-            
+            <img src="./images/Trash.png" class="element__delete" alt="trash icon">
         </div>
         <div class="element">
-            <img src="./images/bald-mountains.png" class="element__image" alt="Image of Bald Mountains">
+            <img src="./images/bald-mountains.jpg" class="element__image" alt="Image of Bald Mountains">
             <p class="element__text">Bald Mountains</p>
             <img src="./images/heart.svg" class="element__heart" alt="heart icon">
-            
+            <img src="./images/Trash.png" class="element__delete" alt="trash icon">
         </div>
         <div class="element">
-            <img src="./images/latemar.png" class="element__image" alt="Image of Latemar">
+            <img src="./images/latemar.jpg" class="element__image" alt="Image of Latemar">
             <p class="element__text">Latemar</p>
             <img src="./images/heart.svg" class="element__heart" alt="heart icon">
-            
+            <img src="./images/Trash.png" class="element__delete" alt="trash icon">
         </div>
         <div class="element">
-            <img src="./images/vanoise-national-park.png" class="element__image" alt="Image of Vanoise National Park">
+            <img src="./images/vanoise.jpg" class="element__image" alt="Image of Vanoise National Park">
             <p class="element__text">Vanoise National Park</p>
             <img src="./images/heart.svg" class="element__heart" alt="heart icon">
-            
+            <img src="./images/Trash.png" class="element__delete" alt="trash icon">
         </div>
         <div class="element">
-            <img src="./images/lago-di-braies.png" class="element__image" alt="Image of Lago di Braies">
+            <img src="./images/lago.jpg" class="element__image" alt="Image of Lago di Braies">
             <p class="element__text">Lago di Braies</p>
             <img src="./images/heart.svg" class="element__heart" alt="heart icon">
-            
+            <img src="./images/Trash.png" class="element__delete" alt="trash icon">
         </div>
     </section>
+
     <section class="form__popup">
-        
         <form class="form">
             <button type="button" class="form__close-btn">
                 <img class="form__close-btn__icon" src="./images/close-icon.png" alt="close icon"> 
@@ -82,6 +82,28 @@
             <button type="submit" class="form__save-btn">Save</button>
         </form>
       </section>
+
+    <section class="form__add_image">
+        <form class="form__place">
+            <button type="button" class="form__place_close-btn">
+                <img class="form__close-btn__icon" src="./images/close-icon.png" alt="close icon">
+            </button>
+            <h2 class="form__heading">New Place</h2>
+            <input type="text" name="title" class="form__title" placeholder="Title">
+            <input type="text" name="url" class="form__url" placeholder="Image URL">
+            <button type="submit" class="form__save-btn">Submit</button>
+        </form>
+    </section>
+
+    <section class="image__popup image__popup_active">
+        <div class="image__popup-full">
+        <button type="button" class="image__popup_close-btn">
+            <img class="image__popup_close-btn__icon" src="./images/close-icon.png" alt="close icon">
+        </button>
+        <img class="image__fullscreen" src="./images/lago.jpg" alt="fullscreen image">
+        <p class="image__title"></p>
+        </div>
+    </section>
 
     <footer class="footer">
         <p class="footer__text">© 2021 Around The U.S.</p>

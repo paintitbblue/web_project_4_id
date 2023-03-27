@@ -5,6 +5,8 @@
     display: flex;
     position: absolute;
     z-index: 1;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
 @media screen and (max-width: 320px) {
