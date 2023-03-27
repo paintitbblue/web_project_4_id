@@ -13,24 +13,38 @@
 <body class="page">
     <header class="header">
         <img class="header__logo" src="./images/logo.png" alt="Around The US Logo">
-        <img class="header__line" src="./images/Line.png" alt="white line">
+        <hr class="header__line">
     </header>
 
     <section class="profile">
         <img src="./images/avatar.png" class="profile__avatar" alt="Image of Jacques Cousteau">
 
         <div class="profile__info">
-            <p class="profile__info__name">Jacques Cousteau</p>
+            <p class="profile__info-name">Jacques Cousteau</p>
             <button class="profile__edit-btn">
-                <img class="profile__edit-btn_icon" src="./images/edit-btn.png" alt="edit button icon">
+                <img src="./images/edit-btn.png" alt="edit button icon">
             </button>
-            <p class="profile__info__bio">Explorer</p>
+            <p class="profile__info-bio">Explorer</p>
         </div>
 
         <button class="profile__add-btn-rect">
             <img src="./images/add-btn.png" class="profile__add-btn" alt="add button icon">
         </button>
     </section>
+
+      <!-- <section class="profile__edit-form-popup">
+        <form class="profile__edit-form" id="form">
+            <button type="button" class="profile__edit-close-btn">
+                <img src="./images/close-icon.png" alt="close icon">
+            </button>
+            <h1 class="profile__edit-form-header">Edit profile</h1>
+            <input type="text" class="profile__edit-form-input" value="Jacques Cousteau" name="name">
+            <input type="text" class="profile__edit-form-input" value="Explorer" name="bio">
+            <button type="submit" class="profile__edit-save-btn">Save</button>
+        </form>
+    </section> -->
+
+    <!-- continue here. changing the name for profile edit form on js -->
 
     <section class="elements">
         <div class="element">
@@ -71,17 +85,6 @@
         </div>
     </section>
 
-    <section class="form__popup">
-        <form class="form">
-            <button type="button" class="form__close-btn">
-                <img class="form__close-btn__icon" src="./images/close-icon.png" alt="close icon">
-            </button>
-            <h2 class="form__heading">Edit profile</h2>
-            <input type="text" class="form__name" placeholder="Name">
-            <input type="text" class="form__bio" placeholder="About Me">
-            <button type="submit" class="form__save-btn">Save</button>
-        </form>
-    </section>
 
     <section class="form__add_image">
         <form class="form__place">

@@ -1,4 +1,4 @@
-.form {
+.profile__edit-form {
     position: relative;
     width: 430px;
     height: 330px;
@@ -9,7 +9,7 @@
 }
 
 @media screen and (max-width: 320px) {
-    .form {
+    .profile__edit-form {
         position: relative;
         width: 282px;
         height: 322px;

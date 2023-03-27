@@ -1,4 +1,4 @@
-.form__popup {
+.profile__edit-form-popup {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -11,7 +11,7 @@
     transition: opacity 300ms ease-in;
   }
   
-  .form__popup_active {
+  .profile__edit-form-popup_active {
     visibility: visible;
     opacity: 1;
   }

@@ -1,4 +1,4 @@
-.form__save-btn {
+.profile__edit-save-btn {
     width: 358px;
     height: 50px;
     border-radius: 2px;
@@ -11,12 +11,12 @@
     border: none;
 }
 
-.form__save-btn:hover {
+.profile__edit-save-btn:hover {
     opacity: .6;
 }
 
 @media screen and (max-width: 320px) {
-    .form__save-btn {
+    .profile__edit-save-btn {
         width: 238px;
         height: 46px;
         margin: 0 25px;
