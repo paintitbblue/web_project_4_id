@@ -50,45 +50,26 @@ const initialCards = [
 const likeButtons = document.querySelectorAll(".element__heart");
 let deleteButtons = document.querySelectorAll(".element__delete");
 
-// function renderCards() {
-//   let cards = "";
-//   initialCards.forEach((card) => {
-//     const cardElement = `
-//       <div class="element">
-//         <img src=${card.link} class="element__image" alt="Image of Yosemite Valley">
-//         <p class="element__text">${card.name}</p>
-//         <img src="./images/heart.svg" class="element__heart" alt="heart icon">
-//         <img src="./images/Trash.png" class="element__delete" alt="trash icon">
-//       </div>
-//     `;
-//     cards += cardElement;
-//   });
-//   cardElements.innerHTML = cards;
-// }
- 
-  
+function handleDeleteCard(evt) {
+  const deleteButton = evt.target;
+  const cardElement = deleteButton.closest(".element");
+  cardElement.remove();
+}
 
+function requeryElements() {
+  deleteButtons = document.querySelectorAll(".element__delete");
+  likeButton = document.querySelectorAll(".element__heart");
 
-  function handleDeleteCard(evt) {
-    const deleteButton = evt.target;
-    const cardElement = deleteButton.closest(".element");
-    cardElement.remove();
-  }
+  deleteButtons.forEach((button) => {
+    button.addEventListener("click", handleDeleteCard);
+  });
 
-  function requeryElements() {
-    deleteButtons = document.querySelectorAll(".element__delete");
-    likeButton = document.querySelectorAll(".element__heart");
-
-    deleteButtons.forEach((button) => {
-      button.addEventListener("click", handleDeleteCard);
+  likeButton.forEach((c) => {
+    c.addEventListener("click", function () {
+      c.classList.toggle("element__heart-active");
     });
-
-    likeButton.forEach((c) => {
-      c.addEventListener("click", function () {
-        c.classList.toggle("element__heart-active");
-      });
-    });
-  }
+  });
+}
 
 requeryElements();
 
@@ -173,23 +154,12 @@ image.forEach((image_element) => {
   image_element.addEventListener("click", function () {
     const selectedImage = image_element.src;
     const popup = document.querySelector(".image__popup");
-    const popupImage = document.querySelector(".image__popup .image");
+    const popupImage = document.querySelector(".image__popup .images");
 
     popupImage.src = selectedImage;
     popup.classList.add("image__popup_active");
   });
 });
-
-
-// images.forEach((image_element) => {
-//   image_element.addEventListener("click", function () {
-//     selectedImage = image_element.src;
-//     document
-//       .querySelector(".image__popup")
-//       .classList.add("image__popup_active");
-//     document.querySelector(".image__popup .image__fullscreen").src = selectedImage;
-//   });
-// });
 
 function imageClose() {
   selectedImage.classList.remove("image__popup_active");
