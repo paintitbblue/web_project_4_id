@@ -1,4 +1,4 @@
-.profile__info-bio {
+.profile__info-job {
     width: 415px;
     font-size: 18px;
     line-height: 22px;
@@ -7,7 +7,7 @@
 }
 
 @media screen and (max-width: 320px) {
-    .profile__info-bio {
+    .profile__info-job {
         width: 282px;
         height: 14px;
         font-size: 14px;

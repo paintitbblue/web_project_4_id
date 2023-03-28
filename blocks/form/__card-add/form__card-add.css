@@ -1,4 +1,4 @@
-.form__add_image {
+.form__card-add {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -11,7 +11,7 @@
     transition: opacity 300ms ease-in;
   }
   
-  .form__add_image_active {
+  .form__card-add_active {
     visibility: visible;
     opacity: 1;
     transition: opacity 300ms ease-out;

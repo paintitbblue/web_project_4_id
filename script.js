@@ -1,14 +1,16 @@
-const popupButton = document.querySelector(".profile__edit-btn");
-const closeButton = document.querySelector(".form__close-btn");
-const popupForm = document.querySelector(".form__popup");
-const formElement = document.querySelector(".form");
-const profileName = document.querySelector(".profile__info_name");
-const profileJob = document.querySelector(".profile__info_bio");
+// Edit Form Element
+const openEditFormBtn = document.querySelector(".profile__edit-btn");
+const closeEditFormBtn = document.querySelector(".profile__edit-close-btn");
+const saveEditFormBtn = document.querySelector(".profile__edit-save-btn");
+const editForm = document.querySelector(".profile__edit-form");
+const profileName = document.querySelector(".profile__info-name");
+const profileJob = document.querySelector(".profile__info-job");
 const inputName = formElement.querySelector(".form__name");
 const inputJob = formElement.querySelector(".form__bio");
-const addButton = document.querySelector(".profile__add-btn");
-let likeButton = document.querySelectorAll(".element .element__heart");
+// Add Card Element
+const addCardBtn = document.querySelector(".profile__add-btn-rect");
 
+const formElement = document.querySelector(".form");
 const addImageForm = document.querySelector(".form__add_image");
 const placeForm = document.querySelector(".form__place");
 const placeTitle = document.querySelector(".form__title");
@@ -21,32 +23,7 @@ const inputUrl = addImageForm.querySelector(".form__url");
 const cardElements = document.querySelector(".elements");
 let selectedImage = document.querySelector(".image__popup");
 const imageCloseButton = document.querySelector(".image__popup_close-btn");
-const initialCards = [
-  {
-    name: "Lembah Yosemite",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
-  },
-  {
-    name: "Danau Louise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg",
-  },
-  {
-    name: "Pegunungan Gundul",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg",
-  },
-  {
-    name: "Gunung Latemar",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg",
-  },
-  {
-    name: "Taman Nasional Vanoise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg",
-  },
-  {
-    name: "Lago di Braies",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
-  },
-];
+
 const likeButtons = document.querySelectorAll(".element__heart");
 let deleteButtons = document.querySelectorAll(".element__delete");
 
@@ -164,3 +141,30 @@ image.forEach((image_element) => {
 function imageClose() {
   selectedImage.classList.remove("image__popup_active");
 }
+
+let initialCards = [
+  {
+    name: "Lembah Yosemite",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
+  },
+  {
+    name: "Danau Louise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg",
+  },
+  {
+    name: "Pegunungan Gundul",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg",
+  },
+  {
+    name: "Gunung Latemar",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg",
+  },
+  {
+    name: "Taman Nasional Vanoise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg",
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
+  },
+];

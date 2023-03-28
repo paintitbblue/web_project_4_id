@@ -24,7 +24,7 @@
             <button class="profile__edit-btn">
                 <img src="./images/edit-btn.png" alt="edit button icon">
             </button>
-            <p class="profile__info-bio">Explorer</p>
+            <p class="profile__info-job">Explorer</p>
         </div>
 
         <button class="profile__add-btn-rect">
@@ -32,17 +32,17 @@
         </button>
     </section>
 
-      <!-- <section class="profile__edit-form-popup">
+      <section class="profile__edit-form-popup">
         <form class="profile__edit-form" id="form">
             <button type="button" class="profile__edit-close-btn">
                 <img src="./images/close-icon.png" alt="close icon">
             </button>
             <h1 class="profile__edit-form-header">Edit profile</h1>
             <input type="text" class="profile__edit-form-input" value="Jacques Cousteau" name="name">
-            <input type="text" class="profile__edit-form-input" value="Explorer" name="bio">
+            <input type="text" class="profile__edit-form-input" value="Explorer" name="job">
             <button type="submit" class="profile__edit-save-btn">Save</button>
         </form>
-    </section> -->
+    </section>
 
     <!-- continue here. changing the name for profile edit form on js -->
 
@@ -85,20 +85,30 @@
         </div>
     </section>
 
+    <section class="popup">
+        <div class="popup__overlay"></div>
+        <div class="popup__content">
+            <button class="popup__close-icon">
+                <img src="./images/close-icon.png" alt="">
+            </button>
+            <img class="popup__image" src="https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg" alt="">
+            <p class="popup__title">Lembah Yosemite</p>
+        </div>
+    </section>
 
-    <section class="form__add_image">
-        <form class="form__place">
-            <button type="button" class="form__place_close-btn">
+    <section class="form__card-add">
+        <form class="form__card">
+            <button type="button" class="form__card-close-btn">
                 <img class="form__close-btn__icon" src="./images/close-icon.png" alt="close icon">
             </button>
-            <h2 class="form__heading">New Place</h2>
-            <input type="text" name="title" class="form__title" placeholder="Title">
-            <input type="text" name="url" class="form__url" placeholder="Image URL">
-            <button type="submit" class="form__save-btn">Submit</button>
+            <h2 class="form__card-header">New Place</h2>
+            <input type="text" name="title" class="form__card-title" placeholder="Title">
+            <input type="text" name="url" class="form__card-url" placeholder="Image URL">
+            <button type="submit" class="form__card-submit-btn">Submit</button>
         </form>
     </section>
 
-    <section class="image__popup">
+    <!-- <section class="image__popup">
         <div class="image__popup-full">
             <button type="button" class="image__popup_close-btn">
                 <img class="image__popup_close-btn__icon" src="./images/close-icon.png" alt="close icon">
@@ -106,11 +116,14 @@
             <img class="image__fullscreen" alt="fullscreen image">
             <p class="image__title"></p>
         </div>
-    </section>
+    </section> -->
+
+    <div class="overlay"></div>
 
     <footer class="footer">
         <p class="footer__text">© 2021 Around The U.S.</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 
