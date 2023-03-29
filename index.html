@@ -30,31 +30,18 @@
         <button class="profile__add-btn-rect">
             <img src="./images/add-btn.png" class="profile__add-btn" alt="add button icon">
         </button>
-    
 
-      <div class="profile__edit-form-overlay">
-        <form class="profile__edit-form" id="form">
-            <button type="button" class="profile__edit-close-btn">
-                <img src="./images/close-icon.png" alt="close icon">
-            </button>
-            <h1 class="profile__edit-form-title">Edit profile</h1>
-            <input type="text" class="profile__edit-form-input" value="Jacques Cousteau" name="name">
-            <input type="text" class="profile__edit-form-input" value="Explorer" name="job">
-            <button type="submit" class="profile__edit-submit-btn">Save</button>
-        </form>
-      </div>
-
-      <div class="form__overlay">
-        <form class="form">
-            <button type="button" class="form__close-btn">
-                <img src="./images/close-icon.png" alt="close icon">
-            </button>
-            <h2 class="form__title">New Place</h2>
-            <input type="text" name="title" class="form__input" placeholder="Title">
-            <input type="url" name="url" class="form__input" placeholder="Image URL">
-            <button type="submit" class="form__submit-btn">Submit</button>
-        </form>
-    </div>
+        <div class="profile__edit-form-overlay">
+            <form class="profile__edit-form" id="form">
+                <button type="button" class="profile__edit-close-btn">
+                    <img src="./images/close-icon.png" alt="close icon">
+                </button>
+                <h1 class="profile__edit-form-title">Edit profile</h1>
+                <input type="text" class="profile__edit-form-input" value="Jacques Cousteau" name="name">
+                <input type="text" class="profile__edit-form-input" value="Explorer" name="job">
+                <button type="submit" class="profile__edit-submit-btn">Save</button>
+            </form>
+        </div>
     </section>
 
     <section class="elements">
@@ -102,10 +89,23 @@
             <button class="popup__close-btn">
                 <img src="./images/close-icon.png" alt="">
             </button>
-            <img class="popup__image" src="https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg" alt="">
+            <img class="popup__image"
+                src="https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg" alt="">
             <p class="popup__title">Yosemite Valley</p>
         </div>
     </section>
+
+    <div class="form__overlay">
+        <form class="form">
+            <button type="button" class="form__close-btn">
+                <img src="./images/close-icon.png" alt="close icon">
+            </button>
+            <h2 class="form__title">New Place</h2>
+            <input type="text" name="title" class="form__input" placeholder="Title">
+            <input type="url" name="url" class="form__input" placeholder="Image URL">
+            <button type="submit" class="form__submit-btn">Submit</button>
+        </form>
+    </div>
 
     <footer class="footer">
         <p class="footer__text">© 2021 Around The U.S.</p>
