@@ -1,4 +1,4 @@
-.profile__edit-save-btn {
+.profile__edit-submit-btn {
     width: 358px;
     height: 50px;
     border-radius: 2px;
@@ -11,12 +11,12 @@
     border: none;
 }
 
-.profile__edit-save-btn:hover {
+.profile__edit-submit-btn:hover {
     opacity: .6;
 }
 
 @media screen and (max-width: 320px) {
-    .profile__edit-save-btn {
+    .profile__edit-submit-btn {
         width: 238px;
         height: 46px;
         margin: 0 25px;

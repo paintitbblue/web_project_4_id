@@ -6,6 +6,7 @@
     background-color: white;
     margin: 195px auto 425px;
     border-radius: 10px;
+    z-index: 10;
 }
 
 @media screen and (max-width: 320px) {
