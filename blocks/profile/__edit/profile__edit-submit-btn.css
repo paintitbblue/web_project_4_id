@@ -13,6 +13,7 @@
 
 .profile__edit-submit-btn:hover {
     opacity: .6;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 320px) {

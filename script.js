@@ -55,13 +55,7 @@ addCardBtn.addEventListener("click", addCardForm);
 closeCardBtn.addEventListener("click", closeCardForm);
 addForm.addEventListener("submit", addNewCard);
 popupCloseBtn.addEventListener("click", closePopupImage);
-// function openEditForm() {
-//   // openEditFormBtn.classList.add("profile__edit-form-overlay_active");
-//   overlay.classList.add("overlay-active");
-//   openEditFormBtn.classList.add("form-active");
-//   inputName.value = profileName.textContent;
-//   inputJob.value = profileJob.textContent;
-// }
+
 function openEditForm() {
   editFormOverlay.classList.add("profile__edit-form-overlay_active");
   inputName.value = profileName.textContent;
@@ -86,7 +80,6 @@ function addCardForm() {
 function closeCardForm() {
   addFormOverlay.classList.remove("form-overlay_active");
 }
-
 
 function cardItems(link, name, index) {
   return `
@@ -139,15 +132,12 @@ function addNewCard(evt) {
 function deleteCard(index) {
   initialCards.splice(index, 1)
   initCard();
+  reQueryElements();
 }
 
 function reQueryElements() {
   let likeButtons = document.querySelectorAll(".element__heart");
   let deleteButtons = document.querySelectorAll(".element__delete");
-
-  deleteButtons.forEach((button) => {
-    button.addEventListener("click", deleteCard);
-  });
 
   likeButtons.forEach((c) => {
     c.addEventListener("click", function () {
@@ -156,67 +146,3 @@ function reQueryElements() {
   });
 }
 
-
-// function buildCardElement({ name, link }) {
-//   const cardElement = document.createElement("div");
-//   cardElement.classList.add("element");
-//   const cardImage = document.createElement("img");
-//   cardImage.classList.add("element__image");
-//   cardImage.src = link;
-//   cardElement.appendChild(cardImage);
-//   const cardText = document.createElement("p");
-//   cardText.classList.add("element__text");
-//   cardText.textContent = name;
-//   cardElement.appendChild(cardText);
-//   const cardHeart = document.createElement("img");
-//   cardHeart.classList.add("element__heart");
-//   cardHeart.src = "./images/heart.svg";
-//   cardElement.appendChild(cardHeart);
-//   const cardDelete = document.createElement("img");
-//   cardDelete.classList.add("element__delete");
-//   cardDelete.src = "./images/trash.png";
-//   cardElement.appendChild(cardDelete);
-//   return cardElement;
-// }
-
-// function handlePlaceFormSubmit(evt) {
-//   evt.preventDefault();
-//   const newCardElement = buildCardElement({
-//     name: inputTitle.value,
-//     link: inputUrl.value,
-//   });
-//   cardElements.prepend(newCardElement);
-//   reQueryElements();
-//   closePlaceForm();
-// }
-
-// function openPlaceForm() {
-//   addImageForm.classList.add("form__add_image_active");
-//   inputTitle.value = placeTitle.textContent;
-//   inputUrl.value = placeUrl.textContent;
-// }
-
-// function closePlaceForm() {
-//   addImageForm.classList.remove("form__add_image_active");
-// }
-
-// image.forEach((image_element) => {
-//   image_element.addEventListener("click", function () {
-//     const selectedImage = image_element.src;
-//     const popup = document.querySelector(".image__popup");
-//     const popupImage = document.querySelector(".image__popup .images");
-
-//     popupImage.src = selectedImage;
-//     popup.classList.add("image__popup_active");
-//   });
-// });
-
-// function imageClose() {
-//   selectedImage.classList.remove("image__popup_active");
-// }
-
-// function handleDeleteCard(evt) {
-//   const deleteButton = evt.target;
-//   const cardElement = deleteButton.closest(".element");
-//   cardElement.remove();
-// }
