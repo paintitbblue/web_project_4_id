@@ -9,7 +9,7 @@ const inputName = editForm.querySelector('input[name="name"]');
 const inputJob = editForm.querySelector('input[name="job"]');
 // Add Card Element
 const addCardBtn = document.querySelector(".profile__add-btn-rect");
-const addFormOverlay = document.querySelector(".form__overlay");
+const addFormOverlay = document.querySelector(".form-overlay");
 const addForm = document.querySelector(".form");
 const closeCardBtn = document.querySelector(".form__close-btn");
 const submitCardBtn = document.querySelector(".form__submit-btn");
@@ -17,7 +17,7 @@ const inputTitle = document.querySelector("input[name='title']");
 const inputUrl = document.querySelector("input[name='url']");
 // Popup Image
 const popup = document.querySelector(".popup");
-const popupOverlay = document.querySelector(".popup__overlay");
+const popupOverlay = document.querySelector(".popup-overlay");
 const popupCloseBtn = document.querySelector(".popup__close-btn");
 
 let initialCards = [
@@ -80,11 +80,11 @@ function submitEditForm (evt) {
 }
 
 function addCardForm() {
-  addFormOverlay.classList.add("form__overlay_active");
+  addFormOverlay.classList.add("form-overlay_active");
 }
 
 function closeCardForm() {
-  addFormOverlay.classList.remove("form__overlay_active");
+  addFormOverlay.classList.remove("form-overlay_active");
 }
 
 
@@ -116,11 +116,11 @@ function popupImage(index) {
 
   document.querySelector(".popup__image").src = link
   document.querySelector(".popup__title").textContent = title
-  popupOverlay.classList.add("popup__overlay_active");
+  popupOverlay.classList.add("popup-overlay_active");
 }
 
 function closePopupImage() {
-  popupOverlay.classList.remove("popup__overlay_active");
+  popupOverlay.classList.remove("popup-overlay_active");
 }
 
 function addNewCard(evt) {
