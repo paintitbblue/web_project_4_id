@@ -18,27 +18,27 @@ const inputUrl = document.querySelector("input[name='url']");
 // Popup Image
 const popup = document.querySelector(".popup");
 const popupOverlay = document.querySelector(".popup-overlay");
-const popupCloseBtn = document.querySelector(".popup__close-btn");
+const popupCloseBtn = document.querySelector(".popup-close-btn");
 
 let initialCards = [
   {
-    name: "Lembah Yosemite",
+    name: "Yosemite Valley",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
   },
   {
-    name: "Danau Louise",
+    name: "Louise Lake",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg",
   },
   {
-    name: "Pegunungan Gundul",
+    name: "Bald Mountain",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg",
   },
   {
-    name: "Gunung Latemar",
+    name: "Latemar",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg",
   },
   {
-    name: "Taman Nasional Vanoise",
+    name: "Vanoise National Park",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg",
   },
   {
@@ -114,8 +114,8 @@ function popupImage(index) {
   const link = initialCards[index].link;
   const title = initialCards[index].name;
 
-  document.querySelector(".popup__image").src = link
-  document.querySelector(".popup__title").textContent = title
+  document.querySelector(".popup-image").src = link
+  document.querySelector(".popup-title").textContent = title
   popupOverlay.classList.add("popup-overlay_active");
 }
 
