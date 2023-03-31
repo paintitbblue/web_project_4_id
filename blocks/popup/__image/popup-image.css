@@ -1,14 +1,14 @@
 .popup-image {
     width: auto;
-    height: auto;
-    z-index: 3;
+    height: 540px;
     background-color: #000;
-    object-fit: contain;
 }
 
 @media screen and (max-width: 320px) {
     .popup-image {
         width: 100%;
+        height: auto;
         scale: .9;
+        object-fit: contain;
     }
 }
