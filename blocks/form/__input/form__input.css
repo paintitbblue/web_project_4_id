@@ -3,9 +3,16 @@
     width: 358px;
     height: 27px;
     border: 0;
-    margin: 0 36px 48px;
+    margin: 20px 36px 10px;
     font-size: 14px;
-    border-bottom: 1px solid #ccc;
+    border: none;
+}
+
+.form__input-error {
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    margin: 10px 36px 10px;
 }
 
 @media screen and (max-width: 320px) {

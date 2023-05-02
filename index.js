@@ -1,6 +1,7 @@
 // Edit Form Element
 const openEditFormBtn = document.querySelector(".profile__edit-btn");
 const closeEditFormBtn = document.querySelector(".profile__edit-close-btn");
+const submitEditFormBtn = document.querySelector(".profile__edit-submit-btn");
 const editForm = document.querySelector(".profile__edit-form");
 const editFormOverlay = document.querySelector(".profile__edit-form-overlay");
 const profileName = document.querySelector(".profile__info-name");
@@ -10,7 +11,7 @@ const inputJob = editForm.querySelector('input[name="job"]');
 // Add Card Element
 const addCardBtn = document.querySelector(".profile__add-btn-rect");
 const addFormOverlay = document.querySelector(".form-overlay");
-const addForm = document.querySelector(".form");
+const addForm = document.querySelector(".add-form");
 const closeCardBtn = document.querySelector(".form__close-btn");
 const submitCardBtn = document.querySelector(".form__submit-btn");
 const inputTitle = document.querySelector("input[name='title']");
@@ -55,6 +56,7 @@ addCardBtn.addEventListener("click", addCardForm);
 closeCardBtn.addEventListener("click", closeCardForm);
 addForm.addEventListener("submit", addNewCard);
 popupCloseBtn.addEventListener("click", closePopupImage);
+submitEditFormBtn.addEventListener("submit", submitEditForm);
 
 function openEditForm() {
   editFormOverlay.classList.add("profile__edit-form-overlay_active");
@@ -64,6 +66,11 @@ function openEditForm() {
 
 function closeEditForm() {
   editFormOverlay.classList.remove("profile__edit-form-overlay_active");
+  editForm.addEventListener("keyup", function(e) {
+    if (e.key === "Escape") {
+      closeEditForm();
+    }
+  })
 }
 
 function submitEditForm (evt) {
@@ -71,14 +78,29 @@ function submitEditForm (evt) {
   profileName.textContent = inputName.value;
   profileJob.textContent = inputJob.value;
   closeEditForm();
+  editForm.addEventListener("keyup", function (e) {
+    if (e.key === "Enter") {
+      submitEditForm();
+    }
+  })
 }
 
 function addCardForm() {
   addFormOverlay.classList.add("form-overlay_active");
+  addForm.addEventListener("keyup", function(e) {
+    if (e.key === "Enter") {
+      addCardForm();
+    }
+  })
 }
 
 function closeCardForm() {
   addFormOverlay.classList.remove("form-overlay_active");
+  addForm.addEventListener("keyup", function(e) {
+    if (e.key === "Escape") {
+      closeCardForm();
+    }
+  })
 }
 
 function cardItems(link, name, index) {
@@ -118,6 +140,7 @@ function closePopupImage() {
 
 function addNewCard(evt) {
   evt.preventDefault();
+  console.log("test")
   const newCard = {
     name: inputTitle.value,
     link: inputUrl.value

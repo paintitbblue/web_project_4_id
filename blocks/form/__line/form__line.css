@@ -1,0 +1,13 @@
+.form__line {
+    width: 358px;
+    height: 0;
+    opacity: .2;
+    margin: 0 36px;
+    border: 1px solid #000;
+}
+
+@media screen and (max-width: 320px) {
+    .form__line {
+        width: 238px;
+    }
+}

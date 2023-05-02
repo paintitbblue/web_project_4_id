@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Project 4</title>
     <link href="index.css" rel="stylesheet">
-
+    
 </head>
 
 <body class="page">
@@ -32,26 +32,47 @@
         </button>
 
         <div class="profile__edit-form-overlay">
-            <form class="profile__edit-form" id="form">
+            <form class="profile__edit-form form" id="form" novalidate>
                 <button type="button" class="profile__edit-close-btn">
                     <img src="./images/close-icon.png" alt="close icon">
                 </button>
                 <h1 class="profile__edit-form-title">Edit profile</h1>
-                <input type="text" class="profile__edit-form-input" value="Jacques Cousteau" name="name">
-                <input type="text" class="profile__edit-form-input" value="Explorer" name="job">
-                <button type="submit" class="profile__edit-submit-btn">Save</button>
+                <label class="form__field">
+                    <input id="name-input" type="text" class="profile__edit-form-input" value="Jacques Cousteau" name="name" required
+                        minlength="2" maxlength="40">
+                        <hr class="form__line">
+                    <span class="form__input-error name-input-error">Please fill this field.</span>
+                </label>
+                
+                <label class="form__field">
+                    <input id="job-input" type="text" class="profile__edit-form-input" value="Explorer" name="job" required
+                        minlength="2" maxlength="200">
+                        <hr class="form__line">
+                    <span class="form__input-error job-input-error">Please fill this field.</span>
+                </label>
+                <button type="submit" class="profile__edit-submit-btn form__submit-btn">Save</button>
             </form>
         </div>
     </section>
 
     <div class="form-overlay">
-        <form class="form">
+        <form class="form add-form" novalidate>
             <button type="button" class="form__close-btn">
                 <img src="./images/close-icon.png" alt="close icon">
             </button>
             <h2 class="form__title">New Place</h2>
-            <input type="text" name="title" class="form__input" placeholder="Title">
-            <input type="url" name="url" class="form__input" placeholder="Image URL">
+            <label class="form__field">
+                <input id="title-input" type="text" name="title" class="form__input" placeholder="Title" required minlength="2" maxlength="30">
+                <hr class="form__line">
+                <span class="form__input-error title-input-error">Please fill the form.</span>
+            </label>
+            
+            <label class="form__field">
+                <input id="link-input" type="url" name="url" class="form__input" placeholder="Image URL" required>
+                <hr class="form__line">
+                <span class="form__input-error link-input-error">Please input link url.</span>
+            </label>
+            
             <button type="submit" class="form__submit-btn">Submit</button>
         </form>
     </div>
@@ -111,7 +132,8 @@
         <p class="footer__text">© 2021 Around The U.S.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="index.js"></script>
+    <script src="validate.js"></script>
 </body>
 
 </html>
