@@ -58,19 +58,30 @@ addForm.addEventListener("submit", addNewCard);
 popupCloseBtn.addEventListener("click", closePopupImage);
 submitEditFormBtn.addEventListener("submit", submitEditForm);
 
+function closeAllPopup(e) {
+  if (e.key === "Escape") {
+    if (editFormOverlay.classList.contains("profile__edit-form-overlay_active")) {
+      closeEditForm();
+    }
+    if (addFormOverlay.classList.contains("form-overlay_active")) {
+      closeCardForm();
+    }
+    if (popupOverlay.classList.contains("popup-overlay_active")) {
+      closePopupImage();
+    }
+  }
+}
+
 function openEditForm() {
   editFormOverlay.classList.add("profile__edit-form-overlay_active");
   inputName.value = profileName.textContent;
   inputJob.value = profileJob.textContent;
-  editForm.addEventListener("keyup", function(e) {
-    if (e.key === "Escape") {
-      closeEditForm();
-    }
-  })
+  editForm.addEventListener("keyup", closeAllPopup)
 }
 
 function closeEditForm() {
   editFormOverlay.classList.remove("profile__edit-form-overlay_active");
+  editForm.removeEventListener("keyup", closeAllPopup)
 }
 
 function submitEditForm (evt) {
@@ -92,15 +103,12 @@ function addCardForm() {
       addCardForm();
     }
   });
-  addForm.addEventListener("keyup", function(e) {
-    if (e.key === "Escape") {
-      closeCardForm();
-    }
-  })
+  addForm.addEventListener("keyup", closeAllPopup)
 }
 
 function closeCardForm() {
   addFormOverlay.classList.remove("form-overlay_active");
+  addForm.removeEventListener("keyup", closeAllPopup)
 }
 
 function cardItems(link, name, index) {
@@ -132,15 +140,12 @@ function popupImage(index) {
   document.querySelector(".popup-image").src = link
   document.querySelector(".popup-title").textContent = title
   popupOverlay.classList.add("popup-overlay_active");
-  popup.addEventListener("keyup", function(e) {
-    if (e.key === "Escape") {
-      closePopupImage();
-    }
-  })
+  popup.addEventListener("keyup", closeAllPopup)
 }
 
 function closePopupImage() {
   popupOverlay.classList.remove("popup-overlay_active");
+  popup.removeEventListener("keyup", closeAllPopup)
 }
 
 function addNewCard(evt) {
