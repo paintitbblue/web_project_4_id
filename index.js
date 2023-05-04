@@ -21,7 +21,7 @@ const popup = document.querySelector(".popup");
 const popupOverlay = document.querySelector(".popup-overlay");
 const popupCloseBtn = document.querySelector(".popup-close-btn");
 
-let initialCards = [
+const initialCards = [
   {
     name: "Yosemite Valley",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
@@ -62,15 +62,15 @@ function openEditForm() {
   editFormOverlay.classList.add("profile__edit-form-overlay_active");
   inputName.value = profileName.textContent;
   inputJob.value = profileJob.textContent;
-}
-
-function closeEditForm() {
-  editFormOverlay.classList.remove("profile__edit-form-overlay_active");
   editForm.addEventListener("keyup", function(e) {
     if (e.key === "Escape") {
       closeEditForm();
     }
   })
+}
+
+function closeEditForm() {
+  editFormOverlay.classList.remove("profile__edit-form-overlay_active");
 }
 
 function submitEditForm (evt) {
@@ -91,16 +91,16 @@ function addCardForm() {
     if (e.key === "Enter") {
       addCardForm();
     }
-  })
-}
-
-function closeCardForm() {
-  addFormOverlay.classList.remove("form-overlay_active");
+  });
   addForm.addEventListener("keyup", function(e) {
     if (e.key === "Escape") {
       closeCardForm();
     }
   })
+}
+
+function closeCardForm() {
+  addFormOverlay.classList.remove("form-overlay_active");
 }
 
 function cardItems(link, name, index) {
@@ -132,6 +132,11 @@ function popupImage(index) {
   document.querySelector(".popup-image").src = link
   document.querySelector(".popup-title").textContent = title
   popupOverlay.classList.add("popup-overlay_active");
+  popup.addEventListener("keyup", function(e) {
+    if (e.key === "Escape") {
+      closePopupImage();
+    }
+  })
 }
 
 function closePopupImage() {
@@ -140,7 +145,6 @@ function closePopupImage() {
 
 function addNewCard(evt) {
   evt.preventDefault();
-  console.log("test")
   const newCard = {
     name: inputTitle.value,
     link: inputUrl.value
@@ -159,8 +163,8 @@ function deleteCard(index) {
 }
 
 function reQueryElements() {
-  let likeButtons = document.querySelectorAll(".element__heart");
-  let deleteButtons = document.querySelectorAll(".element__delete");
+  const likeButtons = document.querySelectorAll(".element__heart");
+  const deleteButtons = document.querySelectorAll(".element__delete");
 
   likeButtons.forEach((c) => {
     c.addEventListener("click", function () {
@@ -168,4 +172,3 @@ function reQueryElements() {
     });
   });
 }
-

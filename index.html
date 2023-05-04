@@ -17,7 +17,7 @@
     </header>
 
     <section class="profile">
-        <img src="./images/avatar.png" class="profile__avatar" alt="Image of Jacques Cousteau">
+        <img src="./images/avatar.png" class="profile__avatar" alt="Profile Photo">
 
         <div class="profile__info">
             <p class="profile__info-name">Jacques Cousteau</p>
@@ -41,15 +41,15 @@
                     <input id="name-input" type="text" class="profile__edit-form-input" value="Jacques Cousteau" name="name" required
                         minlength="2" maxlength="40">
                         <hr class="form__line">
-                    <span class="form__input-error name-input-error">Please fill this field.</span>
+                    <span class="form__input-error name-input-error"></span>
                 </label>
                 
-                <label class="form__field">
+                <div class="form__field">
                     <input id="job-input" type="text" class="profile__edit-form-input" value="Explorer" name="job" required
                         minlength="2" maxlength="200">
                         <hr class="form__line">
-                    <span class="form__input-error job-input-error">Please fill this field.</span>
-                </label>
+                    <span class="form__input-error job-input-error"></span>
+                </div>
                 <button type="submit" class="profile__edit-submit-btn form__submit-btn">Save</button>
             </form>
         </div>
@@ -78,42 +78,6 @@
     </div>
 
     <section class="elements">
-        <div class="element">
-            <img src="./images/yosemite.jpg" class="element__image" alt="Image of Yosemite Valley">
-            <p class="element__text">Yosemite Valley</p>
-            <img src="./images/heart.svg" class="element__heart" alt="heart icon">
-            <img src="./images/Trash.png" class="element__delete" alt="trash icon">
-        </div>
-        <div class="element">
-            <img src="./images/lake-louise.jpg" class="element__image" alt="Image of Lake Louise">
-            <p class="element__text">Lake Louise</p>
-            <img src="./images/heart.svg" class="element__heart" alt="heart icon">
-            <img src="./images/Trash.png" class="element__delete" alt="trash icon">
-        </div>
-        <div class="element">
-            <img src="./images/bald-mountains.jpg" class="element__image" alt="Image of Bald Mountains">
-            <p class="element__text">Bald Mountains</p>
-            <img src="./images/heart.svg" class="element__heart" alt="heart icon">
-            <img src="./images/Trash.png" class="element__delete" alt="trash icon">
-        </div>
-        <div class="element">
-            <img src="./images/latemar.jpg" class="element__image" alt="Image of Latemar">
-            <p class="element__text">Latemar</p>
-            <img src="./images/heart.svg" class="element__heart" alt="heart icon">
-            <img src="./images/Trash.png" class="element__delete" alt="trash icon">
-        </div>
-        <div class="element">
-            <img src="./images/vanoise.jpg" class="element__image" alt="Image of Vanoise National Park">
-            <p class="element__text">Vanoise National Park</p>
-            <img src="./images/heart.svg" class="element__heart" alt="heart icon">
-            <img src="./images/Trash.png" class="element__delete" alt="trash icon">
-        </div>
-        <div class="element">
-            <img src="./images/lago.jpg" class="element__image" alt="Image of Lago di Braies">
-            <p class="element__text">Lago di Braies</p>
-            <img src="./images/heart.svg" class="element__heart" alt="heart icon">
-            <img src="./images/Trash.png" class="element__delete" alt="trash icon">
-        </div>
     </section>
 
     <section class="popup-overlay">
@@ -122,9 +86,8 @@
             <button class="popup-close-btn">
                 <img src="./images/close-icon.png" alt="">
             </button>
-            <img class="popup-image"
-                src="https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg" alt="">
-            <p class="popup-title">Yosemite Valley</p>
+            <img class="popup-image" alt="">
+            <p class="popup-title"></p>
         </div>
     </section>
 
