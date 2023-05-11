@@ -76,12 +76,12 @@ function openEditForm() {
   editFormOverlay.classList.add("profile__edit-form-overlay_active");
   inputName.value = profileName.textContent;
   inputJob.value = profileJob.textContent;
-  editForm.addEventListener("keyup", closeAllPopup)
+  document.addEventListener("keyup", closeAllPopup);
 }
 
 function closeEditForm() {
   editFormOverlay.classList.remove("profile__edit-form-overlay_active");
-  editForm.removeEventListener("keyup", closeAllPopup)
+  document.removeEventListener("keyup", closeAllPopup)
 }
 
 function submitEditForm (evt) {
@@ -103,30 +103,32 @@ function addCardForm() {
       addCardForm();
     }
   });
-  addForm.addEventListener("keyup", closeAllPopup)
+  document.addEventListener("keyup", closeAllPopup);
 }
 
 function closeCardForm() {
   addFormOverlay.classList.remove("form-overlay_active");
-  addForm.removeEventListener("keyup", closeAllPopup)
-}
-
-function cardItems(link, name, index) {
-  return `
-    <div class="element">
-      <img class="element__image" src="${link}" onclick="popupImage(${index})">
-      <p class="element__text">${name}</p>
-      <img src="./images/heart.svg" class="element__heart">
-      <img src="./images/Trash.png" class="element__delete" onclick="deleteCard(${index})">
-    </div>
-  `
+  document.removeEventListener("keyup", closeAllPopup)
 }
 
 function initCard() {
+  const cardTemplate = document.getElementById("card-template");
   let template = "";
-  initialCards.forEach ((item, index) => {
-    template += cardItems(item.link, item.name, index)
-  })
+  initialCards.forEach((item, index) => {
+  
+    const cardElement = cardTemplate.content.cloneNode(true).querySelector(".element");
+
+    const imageElement = cardElement.querySelector(".element__image");
+    imageElement.setAttribute("src", item.link);
+    imageElement.onclick = () => popupImage(index);
+
+    cardElement.querySelector(".element__text").textContent = item.name;
+
+    cardElement.querySelector(".element__delete").onclick = () => deleteCard(index);
+
+    template += cardElement.outerHTML;
+  });
+
   document.querySelector(".elements").innerHTML = template;
 }
 
@@ -140,12 +142,12 @@ function popupImage(index) {
   document.querySelector(".popup-image").src = link
   document.querySelector(".popup-title").textContent = title
   popupOverlay.classList.add("popup-overlay_active");
-  popup.addEventListener("keyup", closeAllPopup)
+  document.addEventListener("keyup", closeAllPopup);
 }
 
 function closePopupImage() {
   popupOverlay.classList.remove("popup-overlay_active");
-  popup.removeEventListener("keyup", closeAllPopup)
+  document.removeEventListener("keyup", closeAllPopup);
 }
 
 function addNewCard(evt) {

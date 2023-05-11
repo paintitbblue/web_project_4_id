@@ -31,7 +31,7 @@ const hasInvalidInput = (inputList) => {
 };
 
 const toggleButtonState = (inputList, buttonElement) => {
-    console.log(hasInvalidInput(inputList));
+    // console.log(hasInvalidInput(inputList));
     if (hasInvalidInput(inputList)) {
         buttonElement.classList.add("form__submit-btn-inactive");
         buttonElement.disabled = true;
@@ -44,7 +44,7 @@ const toggleButtonState = (inputList, buttonElement) => {
 const setEventListeners = (formElement) => {
     const inputList = Array.from(formElement.querySelectorAll("input"));
     const buttonElement = formElement.querySelector(".form__submit-btn");
-    console.log("here", formElement)
+
     toggleButtonState(inputList, buttonElement);
 
     inputList.forEach((inputElement) => {
@@ -61,7 +61,7 @@ const enableValidation = (formElement) => {
         // formElement.addEventListener("submit", (evt) => {
         //     evt.preventDefault();
         // });
-        console.log(formElement)
+        
         setEventListeners(formElement);
     });
 }
