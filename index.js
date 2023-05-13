@@ -111,8 +111,8 @@ function closeCardForm() {
   document.removeEventListener("keyup", closeAllPopup)
 }
 
+const cardTemplate = document.getElementById("card-template");
 function initCard() {
-  const cardTemplate = document.getElementById("card-template");
   let template = "";
   initialCards.forEach((item, index) => {
   
@@ -124,7 +124,7 @@ function initCard() {
 
     cardElement.querySelector(".element__text").textContent = item.name;
 
-    cardElement.querySelector(".element__delete").onclick = () => deleteCard(index);
+    // cardElement.querySelector(".element__delete").onclick = () => deleteCard(index);
 
     template += cardElement.outerHTML;
   });
@@ -172,10 +172,23 @@ function deleteCard(index) {
 function reQueryElements() {
   const likeButtons = document.querySelectorAll(".element__heart");
   const deleteButtons = document.querySelectorAll(".element__delete");
+  const imageElements = document.querySelectorAll(".element__image");
 
   likeButtons.forEach((c) => {
     c.addEventListener("click", function () {
       c.classList.toggle("element__heart-active");
+    });
+  });
+
+  deleteButtons.forEach((val, idx) => {
+    val.addEventListener("click", function () {
+      deleteCard(idx);
+    });
+  });
+
+  imageElements.forEach((val, idx) => {
+    val.addEventListener("click", function () {
+      popupImage(idx);
     });
   });
 }

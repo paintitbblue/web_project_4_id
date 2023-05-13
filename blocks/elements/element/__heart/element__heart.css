@@ -11,5 +11,5 @@
 }
 
 .element__heart-active {
-    background-image: url(/images/Union.png);
+    background: url("../../../../images/Union.png");
 }

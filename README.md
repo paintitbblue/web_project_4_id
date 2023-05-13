@@ -1,4 +1,4 @@
-# Project 4: Around The US
+# Project 4 - 6: Around The US
 
 ### Summary
 
@@ -6,4 +6,10 @@
 * Implementing form popup
 * Created with HTML, CSS and JavaScript
 * Desktop and Mobile version
-* Deploying to Github [ https://paintitbblue.github.io/web_project_4_id/ ]
+* DOM Query Selector
+* Event listener
+* Form Validation
+* Keyboard event
+
+### Github
+[ https://paintitbblue.github.io/web_project_4_id/ ]
