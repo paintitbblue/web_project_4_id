@@ -52,8 +52,8 @@ const initialCards = [
 openEditFormBtn.addEventListener("click", openEditForm);
 closeEditFormBtn.addEventListener("click", closeEditForm);
 editForm.addEventListener("submit", submitEditForm);
-addCardBtn.addEventListener("click", addCardForm);
-closeCardBtn.addEventListener("click", closeCardForm);
+addCardBtn.addEventListener("click", openAddCardForm);
+closeCardBtn.addEventListener("click", closeAddCardForm);
 addForm.addEventListener("submit", addNewCard);
 popupCloseBtn.addEventListener("click", closePopupImage);
 submitEditFormBtn.addEventListener("submit", submitEditForm);
@@ -64,7 +64,7 @@ function closeAllPopup(e) {
       closeEditForm();
     }
     if (addFormOverlay.classList.contains("form-overlay_active")) {
-      closeCardForm();
+      closeAddCardForm();
     }
     if (popupOverlay.classList.contains("popup-overlay_active")) {
       closePopupImage();
@@ -72,11 +72,40 @@ function closeAllPopup(e) {
   }
 }
 
+const body = document.querySelector(".page")
+
+function closeAnywhere(e) {
+  if (e.target === editFormOverlay) {
+    closeEditForm();
+    editFormOverlay.removeEventListener("click", (e) => {
+      closeAnywhere(e);
+    })
+    }
+
+  if (e.target === addFormOverlay) {
+    closeAddCardForm();
+    addFormOverlay.removeEventListener("click", (e) => {
+      closeAnywhere(e);
+    })
+  }
+
+  if (e.target === popupOverlay) {
+    closePopupImage();
+    popupOverlay.removeEventListener("click", (e) => {
+      closeAnywhere(e);
+    })
+  }
+  }
+
+
 function openEditForm() {
   editFormOverlay.classList.add("profile__edit-form-overlay_active");
   inputName.value = profileName.textContent;
   inputJob.value = profileJob.textContent;
   document.addEventListener("keyup", closeAllPopup);
+  editFormOverlay.addEventListener("click", (e) => {
+    closeAnywhere(e);
+  })
 }
 
 function closeEditForm() {
@@ -96,17 +125,15 @@ function submitEditForm (evt) {
   })
 }
 
-function addCardForm() {
+function openAddCardForm() {
   addFormOverlay.classList.add("form-overlay_active");
-  addForm.addEventListener("keyup", function(e) {
-    if (e.key === "Enter") {
-      addCardForm();
-    }
-  });
   document.addEventListener("keyup", closeAllPopup);
+  addFormOverlay.addEventListener("click", (e) => {
+    closeAnywhere(e);
+  })
 }
 
-function closeCardForm() {
+function closeAddCardForm() {
   addFormOverlay.classList.remove("form-overlay_active");
   document.removeEventListener("keyup", closeAllPopup)
 }
@@ -115,16 +142,12 @@ const cardTemplate = document.getElementById("card-template");
 function initCard() {
   let template = "";
   initialCards.forEach((item, index) => {
-  
     const cardElement = cardTemplate.content.cloneNode(true).querySelector(".element");
-
     const imageElement = cardElement.querySelector(".element__image");
     imageElement.setAttribute("src", item.link);
     imageElement.onclick = () => popupImage(index);
 
     cardElement.querySelector(".element__text").textContent = item.name;
-
-    // cardElement.querySelector(".element__delete").onclick = () => deleteCard(index);
 
     template += cardElement.outerHTML;
   });
@@ -143,6 +166,9 @@ function popupImage(index) {
   document.querySelector(".popup-title").textContent = title
   popupOverlay.classList.add("popup-overlay_active");
   document.addEventListener("keyup", closeAllPopup);
+  popupOverlay.addEventListener("click", (e) => {
+    closeAnywhere(e);
+  })
 }
 
 function closePopupImage() {
@@ -160,7 +186,7 @@ function addNewCard(evt) {
 
   initCard();
   reQueryElements();
-  closeCardForm();
+  closeAddCardForm();
 }
 
 function deleteCard(index) {
