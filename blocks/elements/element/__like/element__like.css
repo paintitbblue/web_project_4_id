@@ -1,15 +1,15 @@
-.element__heart {
+.element__like {
     height: 19px;
     position: absolute;
     z-index: 1;
     margin: 312px 30px 31px 243px;
 }
 
-.element__heart:hover {
+.element__like:hover {
     opacity: .5;
     cursor: pointer;
 }
 
-.element__heart-active {
+.element__like-active {
     background: url("../../../../images/Union.png");
 }

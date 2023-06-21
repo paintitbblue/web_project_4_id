@@ -77,16 +77,18 @@
         </form>
     </div>
 
-    <section class="elements">
-        <template id="card-template">
-            <div class="element">
-              <img class="element__image" src=" ">
-              <p class="element__text"></p>
-              <img src="./images/heart.svg" class="element__heart">
-              <img src="./images/Trash.png" class="element__delete">
+    <section class="elements"></section>
+
+    <template id="element">
+        <div class="element">
+            <img class="element__image" src=" ">
+            <div class="element__container">
+                <img src="./images/heart.svg" class="element__like">
+                <img src="./images/Trash.png" class="element__delete">
+                <p class="element__caption"></p>
             </div>
-          </template>          
-      </section>
+        </div>
+    </template>
 
     <section class="popup-overlay">
         <div class="popup"></div>
@@ -103,7 +105,7 @@
         <p class="footer__text">© 2021 Around The U.S.</p>
     </footer>
 
-    <script src="index.js"></script>
+    <script type="module" src="index.js"></script>
     <script src="validate.js"></script>
 </body>
 

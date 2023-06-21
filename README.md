@@ -1,4 +1,4 @@
-# Project 4 - 6: Around The US
+# Project 8: Around The US
 
 ### Summary
 
@@ -10,6 +10,7 @@
 * Event listener
 * Form Validation
 * Keyboard event
+* OOP Structure
 
 ### Github
 [ https://paintitbblue.github.io/web_project_4_id/ ]
