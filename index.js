@@ -34,10 +34,10 @@ class Profile {
   constructor() {
     this.openEditFormBtn = document.querySelector(".profile__edit-btn");
     this.closeEditFormBtn = document.querySelector(".profile__edit-close-btn");
-    this.submitEditFormBtn = document.querySelector(".profile__edit-submit-btn");
+    this.submitEditFormBtn = document.querySelector(".profile__edit-form");
     this.editForm = document.querySelector(".profile__edit-form");
     this.editFormOverlay = document.querySelector(".profile__edit-form-overlay");
-    this.profileName = document.querySelector(".profile__into-name");
+    this.profileName = document.querySelector(".profile__info-name");
     this.profileJob = document.querySelector(".profile__info-job");
     this.inputName = this.editForm.querySelector('input[name="name"]');
     this.inputJob = this.editForm.querySelector('input[name="job"]');
@@ -54,7 +54,7 @@ class Profile {
   }
 
   openEditForm() {
-    this.editFormOverlay.classList.add(".profile__edit-form-overlay_active");
+    this.editFormOverlay.classList.add("profile__edit-form-overlay_active");
     this.inputName.value = this.profileName.textContent;
     this.inputJob.value = this.profileJob.textContent;
     document.addEventListener("keyup", this.closeAllPopup.bind(this));
@@ -69,10 +69,12 @@ class Profile {
   }
 
   submitEditForm(evt) {
+    console.log(this)
     evt.preventDefault();
     this.profileName.textContent = this.inputName.value;
     this.profileJob.textContent = this.inputJob.value;
     this.closeEditForm();
+    
     this.editForm.addEventListener("keyup", (e) => {
       if (e.key === "Enter") {
         this.submitEditForm();
@@ -107,61 +109,106 @@ class Profile {
   }
 }
 
-class CardManager {
+class AddCard {
   constructor() {
-    this.cardTemplate = document.getElementById("#card-template");
-    this.elementsContainer = document.querySelector(".elements");
+    this.addCardBtn = document.querySelector(".profile__add-btn-rect");
+    this.addFormOverlay = document.querySelector(".form-overlay");
+    this.addForm = document.querySelector(".add-form");
+    this.closeCardBtn = document.querySelector(".form__close-btn");
+    this.submitCardBtn = document.querySelector(".form__submit-btn");
+    this.inputTitle = document.querySelector("input[name='title']");
+    this.inputUrl = document.querySelector("input[name='url']");
 
-    this.initCard();
-    this.reQueryElements();
+    this.openAddCardForm = this.openAddCardForm.bind(this);
+    this.closeAddCardForm = this.closeAddCardForm.bind(this);
+    this.addNewCard = this.addNewCard.bind(this);
+
+    this.addCardBtn.addEventListener("click", this.openAddCardForm);
+    this.closeCardBtn.addEventListener("click", this.closeAddCardForm);
+    this.submitCardBtn.addEventListener("submit", this.addNewCard);
   }
 
-  initCard() {
-    let template = "";
-    initialCards.forEach((item, index) => {
-      const cardElement = this.cardTemplate.content.cloneNode(true).querySelector(".element");
-      const imageElement = cardElement.querySelector(".element__image");
-      imageElement.setAttribute("src", item.link);
-      imageElement.onclick = () => this.popup.popupImage(index);
-
-      cardElement.querySelector(".element__caption").textContent = item.name;
-
-      template += cardElement.outerHTML;
+  openAddCardForm() {
+    this.addFormOverlay.classList.add("form-overlay_active");
+    document.addEventListener("keyup", this.closeAllPopup);
+    this.addFormOverlay.addEventListener("click", (e) => {
+      this.closeAnywhere(e);
     });
-
-    this.elementsContainer.innerHTML = template;
   }
 
-  deleteCard(index) {
-    initialCards.splice(index, 1);
-    this.initCard();
-    this.reQueryElements();
+  closeAddCardForm() {
+    this.addFormOverlay.classList.remove("form-overlay_active");
+    document.removeEventListener("keyup", this.closeAllPopup);
   }
 
-  reQueryElements() {
-    const likeButtons = document.querySelectorAll(".element__like");
-    const deleteButtons = document.querySelectorAll(".element__delete");
-    const imageElements = document.querySelectorAll(".element__image");
+  addNewCard(evt) {
+    evt.preventDefault();
+    const newCard = {
+      name: this.inputTitle.value,
+      link: this.inputUrl.value,
+    };
+    initialCards.unshift(newCard);
 
-    likeButtons.forEach((c) => {
-      c.addEventListener("click", function () {
-        c.classList.toggle("element__like-active");
-      });
-    });
-
-    deleteButtons.forEach((val, idx) => {
-      val.addEventListener("click", () => {
-        this.deleteCard(idx);
-      });
-    });
-
-    imageElements.forEach((val, idx) => {
-      val.addEventListener("click", () => {
-        this.popup.popupImage(idx);
-      });
-    });
+    this._renderCard();
+    this.closeAddCardForm();
   }
 }
 
+// class CardManager {
+//   constructor() {
+//     this.cardTemplate = document.getElementById("#card-template");
+//     this.elementsContainer = document.querySelector(".elements");
+
+//     this.initCard();
+//     this.reQueryElements();
+//   }
+
+  // initCard() {
+  //   let template = "";
+  //   initialCards.forEach((item, index) => {
+  //     const cardElement = this.cardTemplate.content.cloneNode(true).querySelector(".element");
+  //     const imageElement = cardElement.querySelector(".element__image");
+  //     imageElement.setAttribute("src", item.link);
+  //     imageElement.onclick = () => this.popup.popupImage(index);
+
+  //     cardElement.querySelector(".element__caption").textContent = item.name;
+
+  //     template += cardElement.outerHTML;
+  //   });
+
+  //   this.elementsContainer.innerHTML = template;
+  // }
+
+//   deleteCard(index) {
+//     initialCards.splice(index, 1);
+//     this.initCard();
+//     this.reQueryElements();
+//   }
+
+//   reQueryElements() {
+//     const likeButtons = document.querySelectorAll(".element__like");
+//     const deleteButtons = document.querySelectorAll(".element__delete");
+//     const imageElements = document.querySelectorAll(".element__image");
+
+//     likeButtons.forEach((c) => {
+//       c.addEventListener("click", function () {
+//         c.classList.toggle("element__like-active");
+//       });
+//     });
+
+//     deleteButtons.forEach((val, idx) => {
+//       val.addEventListener("click", () => {
+//         this.deleteCard(idx);
+//       });
+//     });
+
+//     imageElements.forEach((val, idx) => {
+//       val.addEventListener("click", () => {
+//         this.popup.popupImage(idx);
+//       });
+//     });
+//   }
+// }
+
 const profile = new Profile();
-const editForm = document.querySelector(".profile__edit-form");
+const addCard = new AddCard()

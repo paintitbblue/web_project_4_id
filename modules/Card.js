@@ -1,11 +1,12 @@
 import { Popup } from "../modules/utils.js";
 
 export class Card {
-    constructor (caption, image, onDelete) {
+    constructor (caption, image, idx, onDelete) {
         this._caption = caption;
         this._image = image;
+        this._idx = idx;
         this._onDelete = onDelete;
-        console.log(onDelete)
+        this._deleteCard = this._deleteCard.bind(this);
     }
 
     _getTemplate() {
@@ -20,11 +21,10 @@ export class Card {
 
     generateCard() {
         this._element = this._getTemplate();
-        console.log("card generated", this._caption)
         this._element.querySelector(".element__image").src = this._image;
         this._element.querySelector(".element__caption").textContent = this._caption;
         this._setEventListeners();
-        // new Popup(this._image, this._caption, this._element)
+        new Popup(this._image, this._caption, this._element)
         return this._element;
     }
 
@@ -34,18 +34,17 @@ export class Card {
     }
 
     _deleteCard(idx) {
-        console.log(this._onDelete)
-        this._onDelete(idx)
-
+        this._onDelete(this._idx)
     }
 
-    // _likeCard
+    _likeCard(e) {
+        this.classList.toggle("element__like-active")
+    }
 }
 
 export class CardItems {
     constructor(cardList) {
         this._cardList = cardList
-        console.log("cardlist construct")
         this._renderCard()
         this._deleteCard.bind(this)
     }
@@ -59,20 +58,20 @@ export class CardItems {
         this._renderCard()
     }
     
-    _deleteCard(idx) {
+    _deleteCard = (idx) => {
         this._cardList.splice(idx, 1)
         this._renderCard()
     }
 
     _renderCard() {
         var cards = []
-        console.log("render card")
-        this._cardList.forEach((item) => {
-            const card = new Card(item.name, item.link, this._deleteCard);
+        
+        document.querySelector(".elements").innerHTML = ""
+        this._cardList.forEach((item, idx) => {
+            const card = new Card(item.name, item.link, idx, this._deleteCard);
             const cardElement = card.generateCard()
             cards.push(cardElement)
-            document.querySelector(".elements").append(cardElement)
+            document.querySelector(".elements").append(cardElement);
         })
-        
     }
 }
