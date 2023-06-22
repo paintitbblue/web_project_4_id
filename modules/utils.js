@@ -4,7 +4,9 @@ export class Popup {
         this._caption = caption;
         this._element = element;
         this.setEventListeners();
-        this.popupOpen.bind(this)
+        this.popupOpen = this.popupOpen.bind(this);
+        this.popupClose = this.popupClose.bind(this);
+        this.closeAllPopup = this.closeAllPopup.bind(this);
     }
 
     setEventListeners() {
@@ -14,16 +16,38 @@ export class Popup {
     }
 
     popupOpen() {
-        console.log(this)
         const link = this.parentElement.querySelector(".element__image").src;
         const title = this.parentElement.querySelector(".element__caption").textContent;
 
         document.querySelector(".popup-image").src = link;
         document.querySelector(".popup-title").textContent = title;
         document.querySelector(".popup-overlay").classList.add("popup-overlay_active");
+        document.addEventListener("keyup", this.closeAllPopup);
+        console.log(this)
     }
 
     popupClose() {
         document.querySelector(".popup-overlay").classList.remove("popup-overlay_active");
+        document.removeEventListener("keyup", this.closeAllPopup);
     }
+
+    closeAllPopup(e) {
+        if (e.key === "Escape") {
+          if (document.querySelector(".popup").classList.contains("popup-overlay_active")) {
+            this.popupClose();
+          }
+        }
+      }
+
+      closeAnywhere(e) {
+        if (e.target === this.editFormOverlay) {
+          this.closeEditForm();
+        }
+        if (e.target === this.addFormOverlay) {
+          this.closeAddCardForm();
+        }
+        if (e.target === this.popupOverlay) {
+          this.closePopupImage();
+        }
+      }
 }

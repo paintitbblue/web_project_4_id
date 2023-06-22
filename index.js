@@ -65,7 +65,7 @@ class Profile {
 
   closeEditForm() {
     this.editFormOverlay.classList.remove("profile__edit-form-overlay_active");
-    document.removeEventListener("keyup", this.closeAllPopup.bind(this));
+    document.removeEventListener("keyup", this.closeAllPopup);
   }
 
   submitEditForm(evt) {
@@ -86,12 +86,6 @@ class Profile {
     if (e.key === "Escape") {
       if (this.editFormOverlay.classList.contains("profile__edit-form-overlay_active")) {
         this.closeEditForm();
-      }
-      if (this.addFormOverlay.classList.contains("form-overlay_active")) {
-        this.closeAddCardForm();
-      }
-      if (this.popupOverlay.classList.contains("popup-overlay_active")) {
-        this.closePopupImage();
       }
     }
   }
@@ -122,6 +116,8 @@ class AddCard {
     this.openAddCardForm = this.openAddCardForm.bind(this);
     this.closeAddCardForm = this.closeAddCardForm.bind(this);
     this.addNewCard = this.addNewCard.bind(this);
+    this.closeAnywhere = this.closeAnywhere.bind(this);
+    this.closeAllPopup = this.closeAllPopup.bind(this);
 
     this.addCardBtn.addEventListener("click", this.openAddCardForm);
     this.closeCardBtn.addEventListener("click", this.closeAddCardForm);
@@ -147,68 +143,32 @@ class AddCard {
       name: this.inputTitle.value,
       link: this.inputUrl.value,
     };
-    initialCards.unshift(newCard);
+    initialCards.push(newCard);
 
     this._renderCard();
     this.closeAddCardForm();
   }
+
+  closeAllPopup(e) {
+    if (e.key === "Escape") {
+      if (this.addFormOverlay.classList.contains("form-overlay_active")) {
+        this.closeAddCardForm();
+      }
+    }
+  }
+
+  closeAnywhere(e) {
+    if (e.target === this.editFormOverlay) {
+      this.closeEditForm();
+    }
+    if (e.target === this.addFormOverlay) {
+      this.closeAddCardForm();
+    }
+    if (e.target === this.popupOverlay) {
+      this.closePopupImage();
+    }
+  }
 }
-
-// class CardManager {
-//   constructor() {
-//     this.cardTemplate = document.getElementById("#card-template");
-//     this.elementsContainer = document.querySelector(".elements");
-
-//     this.initCard();
-//     this.reQueryElements();
-//   }
-
-  // initCard() {
-  //   let template = "";
-  //   initialCards.forEach((item, index) => {
-  //     const cardElement = this.cardTemplate.content.cloneNode(true).querySelector(".element");
-  //     const imageElement = cardElement.querySelector(".element__image");
-  //     imageElement.setAttribute("src", item.link);
-  //     imageElement.onclick = () => this.popup.popupImage(index);
-
-  //     cardElement.querySelector(".element__caption").textContent = item.name;
-
-  //     template += cardElement.outerHTML;
-  //   });
-
-  //   this.elementsContainer.innerHTML = template;
-  // }
-
-//   deleteCard(index) {
-//     initialCards.splice(index, 1);
-//     this.initCard();
-//     this.reQueryElements();
-//   }
-
-//   reQueryElements() {
-//     const likeButtons = document.querySelectorAll(".element__like");
-//     const deleteButtons = document.querySelectorAll(".element__delete");
-//     const imageElements = document.querySelectorAll(".element__image");
-
-//     likeButtons.forEach((c) => {
-//       c.addEventListener("click", function () {
-//         c.classList.toggle("element__like-active");
-//       });
-//     });
-
-//     deleteButtons.forEach((val, idx) => {
-//       val.addEventListener("click", () => {
-//         this.deleteCard(idx);
-//       });
-//     });
-
-//     imageElements.forEach((val, idx) => {
-//       val.addEventListener("click", () => {
-//         this.popup.popupImage(idx);
-//       });
-//     });
-//   }
-// }
 
 const profile = new Profile();
 const addCard = new AddCard()
