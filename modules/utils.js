@@ -13,6 +13,7 @@ export class Popup {
         this._element.querySelector(".element__image").addEventListener("click", this.popupOpen);
         document.querySelector(".popup-close-btn").addEventListener("click", this.popupClose);
         document.querySelector(".popup-overlay").addEventListener("click", this.popupClose);
+        document.addEventListener("keyup", this.closeAllPopup)
     }
 
     popupOpen() {
@@ -31,9 +32,9 @@ export class Popup {
         document.removeEventListener("keyup", this.closeAllPopup);
     }
 
-    closeAllPopup(e) {
+    closeAllPopup = (e) => {
         if (e.key === "Escape") {
-          if (document.querySelector(".popup").classList.contains("popup-overlay_active")) {
+          if (document.querySelector(".popup-overlay").classList.contains("popup-overlay_active")) {
             this.popupClose();
           }
         }

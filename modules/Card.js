@@ -49,11 +49,8 @@ export class CardItems {
         this._deleteCard.bind(this)
     }
 
-    addCard() {
-        this._cardList.push({
-            name : titleInput.value,
-            link : linkInput.value
-        })
+    addCard(card) {
+        this._cardList.unshift(card)
 
         this._renderCard()
     }

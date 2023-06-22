@@ -35,9 +35,11 @@ export class FormValidator {
     }
 
     toggleButtonState() {
+        
         if(this.hasInvalidInput()) {
             this.buttonElement.classList.add("form__submit-btn-inactive");
             this.buttonElement.disabled = true;
+            console.log("check toggle")
         } else {
             this.buttonElement.classList.remove("form__submit-btn-inactive");
             this.buttonElement.disabled = false;
@@ -65,5 +67,8 @@ export class FormValidator {
 }
 
 const form = document.querySelector(".form");
+const addForm = document.querySelector(".add-form");
+const addFormValidator = new FormValidator(addForm);
+addFormValidator.enableValidation();
 const formValidator = new FormValidator(form);
 formValidator.enableValidation();

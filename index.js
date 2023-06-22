@@ -28,7 +28,7 @@ const initialCards = [
     },
   ];
 
-new CardItems(initialCards);
+const cardItems = new CardItems(initialCards);
 
 class Profile {
   constructor() {
@@ -109,7 +109,7 @@ class AddCard {
     this.addFormOverlay = document.querySelector(".form-overlay");
     this.addForm = document.querySelector(".add-form");
     this.closeCardBtn = document.querySelector(".form__close-btn");
-    this.submitCardBtn = document.querySelector(".form__submit-btn");
+    this.submitCardBtn = document.querySelector(".add-form");
     this.inputTitle = document.querySelector("input[name='title']");
     this.inputUrl = document.querySelector("input[name='url']");
 
@@ -143,9 +143,9 @@ class AddCard {
       name: this.inputTitle.value,
       link: this.inputUrl.value,
     };
-    initialCards.push(newCard);
-
-    this._renderCard();
+    console.log("newCard", newCard);
+    cardItems.addCard(newCard)
+    
     this.closeAddCardForm();
   }
 
