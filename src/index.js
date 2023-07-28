@@ -1,5 +1,7 @@
-import { CardItems } from "./modules/Card.js";
+import "./styles/index.css";
+import { CardItems, Card } from "./modules/Card.js";
 import { FormValidator } from "./modules/FormValidator.js";
+import Section from "./modules/Section.js"
 
 const initialCards = [
     {
@@ -28,7 +30,21 @@ const initialCards = [
     },
   ];
 
-const cardItems = new CardItems(initialCards);
+// const cardItems = new CardItems(initialCards);
+
+function renderSection(element, items) {
+  var cards = []
+        
+        element.innerHTML = ""
+        items.forEach((item, idx) => {
+            const card = new Card(item.name, item.link, idx, this._deleteCard);
+            const cardElement = card.generateCard()
+            cards.push(cardElement)
+            element.append(cardElement);
+        })
+}
+const section = new Section( {items: initialCards, renderer: renderSection}, ".elements" );
+section.renderItems()
 
 class Profile {
   constructor() {
@@ -171,4 +187,4 @@ class AddCard {
 }
 
 const profile = new Profile();
-const addCard = new AddCard()
+const addCard = new AddCard();

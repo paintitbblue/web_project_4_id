@@ -1,4 +1,4 @@
-import { Popup } from "../modules/utils.js";
+import { Popup } from "./PopUp.js";
 
 export class Card {
     constructor (caption, image, idx, onDelete) {

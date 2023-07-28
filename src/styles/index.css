@@ -1,0 +1,76 @@
+@import url(../blocks/page/page.css);
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__logo/header__logo.css);
+@import url(../blocks/header/__line/header__line.css);
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__avatar/profile__avatar.css);
+@import url(../blocks/profile/__info/profile__info.css);
+@import url(../blocks/profile/__info/profile__info-name.css);
+@import url(../blocks/profile/__info/profile__info-job.css);
+@import url(../blocks/profile/__btn/profile__edit-btn.css);
+@import url(../blocks/profile/__btn/profile__add-btn.css);
+@import url(../blocks/profile/__btn/profile__add-btn-rect.css);
+@import url(../blocks/profile/__edit/profile__edit-form-overlay.css);
+@import url(../blocks/profile/__edit/profile__edit-form.css);
+@import url(../blocks/profile/__edit/profile__edit-close-btn.css);
+@import url(../blocks/profile/__edit/profile__edit-form-title.css);
+@import url(../blocks/profile/__edit/profile__edit-form-input.css);
+@import url(../blocks/profile/__edit/profile__edit-submit-btn.css);
+@import url(../blocks/elements/elements.css);
+@import url(../blocks/elements/element/element.css);
+@import url(../blocks/elements/element/__image/element__image.css);
+@import url(../blocks/elements/element/__like/element__like.css);
+@import url(../blocks/elements/element/__container/element__container.css);
+@import url(../blocks/elements/element/__caption/element__caption.css);
+@import url(../blocks/elements/element/__delete/element__delete.css);
+@import url(../blocks/elements/element/__image/__popup/image__popup.css);
+@import url(../blocks/elements/element/__image/__popup/__close-btn/image__popup_close-btn.css);
+@import url(../blocks/elements/element/__image/__popup/image__popup-full.css);
+@import url(../blocks/form/__close-btn/form__close-btn.css);
+@import url(../blocks/form/__submit-btn/form__submit-btn.css);
+@import url(../blocks/form/__input/form__input.css);
+@import url(../blocks/form/__overlay/form-overlay.css);
+@import url(../blocks/form/__title/form__title.css);
+@import url(../blocks/form/__line/form__line.css);
+@import url(../blocks/form/form.css);
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__overlay/popup-overlay.css);
+@import url(../blocks/popup/__content/popup-content.css);
+@import url(../blocks/popup/__image/popup-image.css);
+@import url(../blocks/popup/__close-btn/popup-close-btn.css);
+@import url(../blocks/popup/__title/popup-title.css);
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__text/footer__text.css);
+
+input:focus {
+    outline: none;
+    border: 2px solid #487daf;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./font/Inter-Regular.woff2) format("woff2"),
+        url(./font/Inter-Regular.woff) format("woff");
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(./font/Inter-SemiBold.woff2) format("woff2"),
+        url(./font/Inter-SemiBold.woff) format("woff");
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url(./font/Inter-Black.woff2) format("woff2"),
+        url(./font/Inter-Black.woff) format("woff");
+}  
