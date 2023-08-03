@@ -30,7 +30,7 @@ const initialCards = [
     },
   ];
 
-// const cardItems = new CardItems(initialCards);
+const cardItems = new CardItems(initialCards);
 
 function renderSection(element, items) {
   var cards = []
