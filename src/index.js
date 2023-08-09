@@ -30,7 +30,7 @@ const initialCards = [
     },
   ];
 
-const cardItems = new CardItems(initialCards);
+// const cardItems = new CardItems(initialCards);
 
 function renderSection(element, items) {
   var cards = []
@@ -85,7 +85,6 @@ class Profile {
   }
 
   submitEditForm(evt) {
-    console.log(this)
     evt.preventDefault();
     this.profileName.textContent = this.inputName.value;
     this.profileJob.textContent = this.inputJob.value;
@@ -159,8 +158,7 @@ class AddCard {
       name: this.inputTitle.value,
       link: this.inputUrl.value,
     };
-    console.log("newCard", newCard);
-    cardItems.addCard(newCard)
+    section.addItem(newCard)
     
     this.closeAddCardForm();
   }

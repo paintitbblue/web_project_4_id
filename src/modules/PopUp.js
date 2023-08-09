@@ -1,7 +1,5 @@
 export class Popup {
-    constructor(image, caption, element) {
-        this._image = image;
-        this._caption = caption;
+    constructor(element) {
         this._element = element;
         this.setEventListeners();
         this.popupOpen = this.popupOpen.bind(this);
@@ -24,7 +22,6 @@ export class Popup {
         document.querySelector(".popup-title").textContent = title;
         document.querySelector(".popup-overlay").classList.add("popup-overlay_active");
         document.addEventListener("keyup", this.closeAllPopup);
-        console.log(this)
     }
 
     popupClose() {

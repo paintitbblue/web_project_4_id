@@ -39,7 +39,6 @@ export class FormValidator {
         if(this.hasInvalidInput()) {
             this.buttonElement.classList.add("form__submit-btn-inactive");
             this.buttonElement.disabled = true;
-            console.log("check toggle")
         } else {
             this.buttonElement.classList.remove("form__submit-btn-inactive");
             this.buttonElement.disabled = false;

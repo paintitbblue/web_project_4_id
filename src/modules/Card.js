@@ -24,7 +24,7 @@ export class Card {
         this._element.querySelector(".element__image").src = this._image;
         this._element.querySelector(".element__caption").textContent = this._caption;
         this._setEventListeners();
-        new Popup(this._image, this._caption, this._element)
+        new Popup(this._element)
         return this._element;
     }
 
@@ -39,36 +39,5 @@ export class Card {
 
     _likeCard(e) {
         this.classList.toggle("element__like-active")
-    }
-}
-
-export class CardItems {
-    constructor(cardList) {
-        this._cardList = cardList
-        this._renderCard()
-        this._deleteCard.bind(this)
-    }
-
-    addCard(card) {
-        this._cardList.unshift(card)
-
-        this._renderCard()
-    }
-    
-    _deleteCard = (idx) => {
-        this._cardList.splice(idx, 1)
-        this._renderCard()
-    }
-
-    _renderCard() {
-        var cards = []
-        
-        document.querySelector(".elements").innerHTML = ""
-        this._cardList.forEach((item, idx) => {
-            const card = new Card(item.name, item.link, idx, this._deleteCard);
-            const cardElement = card.generateCard()
-            cards.push(cardElement)
-            document.querySelector(".elements").append(cardElement);
-        })
     }
 }
