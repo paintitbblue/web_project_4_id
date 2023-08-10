@@ -92,7 +92,7 @@ class Profile {
     
     this.editForm.addEventListener("keyup", (e) => {
       if (e.key === "Enter") {
-        this.submitEditForm();
+        this.submitEditForm(e);
       }
     });
   }
